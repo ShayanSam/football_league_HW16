@@ -1,5 +1,9 @@
 package app;
 
+import dao.CityDao;
+import dao.MatchesDao;
+import dao.SeasonDao;
+import dao.TeamDao;
 import entities.*;
 import util.JpaUtil;
 import javax.persistence.EntityManager;
@@ -52,8 +56,8 @@ public class App {
             Set<Team> teamSet = new HashSet<>();
             teamSet.add(team);
 
-            Season season = Season.builder().year(Year.of(2017)).build();
-            Season season1 = Season.builder().year(Year.of(2018)).build();
+            Season season = Season.builder().year("2017").build();
+            Season season1 = Season.builder().year("2018").build();
 
             Set<Season> seasonSet = new HashSet<>();
             seasonSet.add(season);
@@ -68,14 +72,21 @@ public class App {
             team2.setCity(city);
             stadium.setCity(city);
 
+            Matches matches = Matches.builder().date(LocalDate.of(2017,10,17)).time(LocalTime.of(12,00))
+                    .teamA(1L).teamB(2L).winner(1L).season(season).stadium(stadium).build();
 
 
+            TeamDao teamDao = new TeamDao(entityManager);
+            CityDao cityDao = new CityDao(entityManager);
+            SeasonDao seasonDao = new SeasonDao(entityManager);
+            MatchesDao matchesDao = new MatchesDao(entityManager);
 
-
-            entityManager.persist(team);
-            entityManager.persist(team2);
-            entityManager.persist(city);
-
+            teamDao.save(team);
+            teamDao.save(team2);
+            cityDao.save(city);
+            seasonDao.save(season);
+            seasonDao.save(season1);
+            matchesDao.save(matches);
 
 
             entityTransaction.commit();

@@ -25,7 +25,7 @@ public class Stadium {
     @Column(name = "stadium_capacity")
     private Integer capacity;
 
-    @OneToOne(mappedBy = "stadium")
+    @OneToOne(mappedBy = "stadium", cascade = {CascadeType.ALL})
     private Matches matches;
 
     @ManyToOne

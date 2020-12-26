@@ -19,7 +19,7 @@ public class Season {
 
 
     @Column(name = "season_year")
-    private Year year;
+    private String year;
 
 
 
