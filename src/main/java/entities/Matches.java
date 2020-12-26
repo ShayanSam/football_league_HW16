@@ -38,8 +38,7 @@ public class Matches {
     @Column(name = "winner_team_id")
     private Long winner;
 
-    @OneToMany(mappedBy = "matches")
-    private Set<Team> teamSet;
+
 
     @OneToOne
     private Stadium stadium;

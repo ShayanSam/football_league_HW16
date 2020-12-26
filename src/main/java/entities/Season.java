@@ -22,14 +22,6 @@ public class Season {
     private Year year;
 
 
-    @OneToMany(mappedBy = "season")
-    private Set<Team> teamSet;
-
-
-    @OneToMany(mappedBy = "season")
-    private Set<Matches> matchSet;
-
-
 
 
 

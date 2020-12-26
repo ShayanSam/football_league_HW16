@@ -22,10 +22,10 @@ public class City {
     private String name;
 
 
-    @OneToMany(mappedBy = "city")
+    @OneToMany(mappedBy = "city", cascade = {CascadeType.ALL})
     private Set<Stadium> stadiumSet;
 
-    @OneToMany(mappedBy = "city")
+    @OneToMany(mappedBy = "city", cascade = {CascadeType.ALL})
     private Set<Team> teamSet;
 
 
