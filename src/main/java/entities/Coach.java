@@ -1,38 +1,31 @@
 package entities;
 
 
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
 @Setter
-@Builder
 public class Coach {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "coach_id")
-    private Long id;
+    @Column(name = "match_id")
+    private @Setter(AccessLevel.NONE) Long id;
 
-    @Column(name = "first_name",nullable = false,length = 50)
-    private String firstName;
+    @Column(name = "coach_name")
+    private String name;
 
-    @Column(name = "last_name",nullable = false,length = 50)
-    private String lastName;
-
-
-    @Column(name = "salary",nullable = false)
+    @Column(name = "salary")
     private Double salary;
 
     @ManyToOne
+    @JoinColumn(name = "team_id")
     private Team team;
-
-
-
-
-
 
 
 }

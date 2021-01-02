@@ -1,34 +1,26 @@
 package entities;
 
-
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
 @Setter
-@Builder
 public class Stadium {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "stadium_id")
-    private Long id;
-
+    private @Setter(AccessLevel.NONE) Long id;
 
     @Column(name = "stadium_name")
-    private String name;
-
-
-    @Column(name = "stadium_capacity")
-    private Integer capacity;
-
-    @OneToOne(mappedBy = "stadium", cascade = {CascadeType.ALL})
-    private Matches matches;
+    private String stadiumName;
 
     @ManyToOne
+    @JoinColumn(name = "city_id")
     private City city;
 
 

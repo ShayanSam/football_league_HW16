@@ -1,39 +1,33 @@
 package entities;
 
-
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Set;
-
 @Entity
 @Getter
 @Setter
-@Builder
 public class Team {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "team_id")
-    private Long id;
+    private @Setter(AccessLevel.NONE) Long id;
 
-    @Column(name = "name")
+    @Column(name = "team_name")
     private String name;
 
+    @OneToOne
+    @JoinColumn(name = "team_cp")
+    private Player captain;
 
-    @Column(name = "cp_id",nullable = false)
-    private Long captainId;
-
-    @OneToMany(mappedBy = "team",cascade = {CascadeType.ALL})
+    @OneToMany(mappedBy = "team")
     private Set<Player> playerSet;
 
-    @OneToMany(mappedBy = "team",cascade = {CascadeType.ALL})
-    private Set<Coach> coachSet;
-
-
     @ManyToOne
+    @JoinColumn(name = "city_id")
     private City city;
-
-
 
 }

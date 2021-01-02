@@ -7,31 +7,23 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Getter@Setter
-public class Player {
-
+@Getter
+@Setter
+public class Score {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "player_id")
+    @Column(name = "score_id")
     private @Setter(AccessLevel.NONE) Long id;
 
-    @Column(name = "first_name")
-    private String firstName;
+    @Column(name = "season_score")
+    private Integer seasonScore;
 
-    @Column(name = "last_name")
-    private String lastName;
+    @OneToOne
+    @JoinColumn(name = "season_id")
+    private Season season;
 
-    @Column(name = "player_value")
-    private Double value;
-
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "team_id")
     private Team team;
-
-
-
-
-
-
 }
