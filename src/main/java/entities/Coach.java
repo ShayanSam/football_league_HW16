@@ -4,6 +4,7 @@ package entities;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -27,5 +28,13 @@ public class Coach {
     @JoinColumn(name = "team_id")
     private Team team;
 
-
+    @Override
+    public String toString() {
+        return "Coach{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", salary=" + salary +
+                ", team=" + getTeam() +
+                '}';
+    }
 }

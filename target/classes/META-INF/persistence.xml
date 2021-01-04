@@ -15,7 +15,7 @@
             <property name="javax.persistence.jdbc.password" value="Sh@y@n22792" />
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.format_sql" value="true"/>
-            <property name="hibernate.hbm2ddl.auto" value="create" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
 <!--            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>-->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
 <!--            <property name="hibernate.id.new_generator_mappings" value="true"/>-->

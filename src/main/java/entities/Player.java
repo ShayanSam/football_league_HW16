@@ -29,9 +29,12 @@ public class Player {
     @JoinColumn(name = "team_id")
     private Team team;
 
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "Player{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
+    }
 }

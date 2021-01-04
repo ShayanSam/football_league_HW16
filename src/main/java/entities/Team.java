@@ -30,4 +30,5 @@ public class Team {
     @JoinColumn(name = "city_id")
     private City city;
 
+
 }
