@@ -30,5 +30,11 @@ public class Team {
     @JoinColumn(name = "city_id")
     private City city;
 
-
+    @Override
+    public String toString() {
+        return "Team{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

@@ -19,11 +19,21 @@ public class Score {
     @Column(name = "season_score")
     private Integer seasonScore;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "season_id")
     private Season season;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "team_id")
     private Team team;
+
+    @Override
+    public String toString() {
+        return "Score{" +
+                "id=" + id +
+                ", seasonScore=" + getSeasonScore() +
+                ", season=" + getSeason() +
+                ", team=" + getTeam() +
+                '}';
+    }
 }

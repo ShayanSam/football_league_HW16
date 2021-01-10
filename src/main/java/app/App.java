@@ -147,7 +147,11 @@ public class App {
 //            }
 
 //            CriteriaApi.highestPaidForCoach(entityManager);
-            CriteriaApi.highestPaidForPlayer(entityManager);
+//            CriteriaApi.highestPaidForPlayer(entityManager);
+//            CriteriaApi.countTeamCity(entityManager);
+//            CriteriaApi.sumScoreFor1398(entityManager);
+//            CriteriaApi.championOfYear1398(entityManager);
+
             entityTransaction.commit();
 
 

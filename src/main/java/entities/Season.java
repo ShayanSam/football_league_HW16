@@ -27,10 +27,13 @@ public class Season {
     private Set<MatchEvent> matchEventSet;
 
 
-
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "Season{" +
+                "id=" + id +
+                ", Year='" + Year + '\'' +
+                ", teamSet=" + getTeamSet() +
+                ", matchEventSet=" + getMatchEventSet() +
+                '}';
+    }
 }

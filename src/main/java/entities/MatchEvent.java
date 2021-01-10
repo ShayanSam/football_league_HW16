@@ -24,13 +24,13 @@ public class MatchEvent {
     @Column(name  = "time")
     private LocalTime time;
 
-    @OneToOne
+    @ManyToOne
     private Team homeTeam;
 
-    @OneToOne
+    @ManyToOne
     private Team awayTeam;
 
-    @OneToOne
+    @ManyToOne
     private Team winner;
 
     @Column(name = "hasWinner")

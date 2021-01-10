@@ -22,8 +22,11 @@ public class City {
     private String cityName;
 
 
-
-
-
-
+    @Override
+    public String toString() {
+        return "City{" +
+                "id=" + id +
+                ", cityName='" + cityName + '\'' +
+                '}';
+    }
 }
